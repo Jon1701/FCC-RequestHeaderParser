@@ -1,0 +1,26 @@
+{
+  "name": "ms-request-header-parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "bin": {
+    "nodemon": "./bin/nodemon"
+  },
+  "scripts": {
+    "start": "nodemon ./server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jon1701/MS-RequestHeaderParser.git"
+  },
+  "author": "Jon1701",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jon1701/MS-RequestHeaderParser/issues"
+  },
+  "homepage": "https://github.com/Jon1701/MS-RequestHeaderParser#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "nodemon": "^1.10.2"
+  }
+}
