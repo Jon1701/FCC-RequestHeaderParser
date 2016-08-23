@@ -2,6 +2,9 @@
 var express = require('express');
 var app = express();
 
+// Serve files from the ./build folder.
+app.use(express.static('build'));
+
 app.get('/identify', function(req, res) {
 
   // Extracts operating system information from the browser headers.
@@ -49,7 +52,12 @@ app.get('/identify', function(req, res) {
   res.json(results);
 });
 
+// Root folder. Serve index.html.
+app.get('/', function(req, res) {
+  res.sendfile(__dirname + '/build/index.html');
+});
+
 // Listen on Port 8080.
-app.listen(8080, function() {
+app.listen(8080, '127.0.0.1', function() {
   console.log('Listening for incoming traffic on PORT 8080.');
 });

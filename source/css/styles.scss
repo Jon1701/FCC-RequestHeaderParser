@@ -1,0 +1,41 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  border: solid 1px black;
+}
+
+.container-tabs {
+  width: 100%;
+  display: flex;
+
+  // Individual tab.
+  .tab {
+    border: solid 1px black;
+    display: block;
+    flex: 1;
+
+    padding: 25px;
+    width: 50%;
+  }
+
+}
+
+.container-tabcontents {
+
+  padding: 15px;
+
+  border: solid 1px black;
+}
+
+.active {
+  background-color: #333333;
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
