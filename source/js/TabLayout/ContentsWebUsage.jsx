@@ -9,9 +9,9 @@ export default class ContentsWebUsage extends React.Component {
     super();
 
     this.state = {
-      ip: null,
-      os: null,
-      lang: null
+      ip: 'Unknown',
+      os: 'Unknown',
+      lang: 'Unknown'
     }
   }
 
@@ -52,11 +52,21 @@ export default class ContentsWebUsage extends React.Component {
     return (
       <div className={myClasses}>
 
-        <div>IP Address: {this.state.ip}</div>
+        <div className="iconSection">
+          <div className="icon fa fa-globe"></div>
+          <div className="title text-center">IP Address</div>
+          <div className="value text-center">{this.state.ip}</div>
+        </div>
 
-        <div>Operating System: {this.state.os}</div>
+        <div className="iconSection">
+          <div className="title text-center">Operating System</div>
+          <div className="value text-center">{this.state.os}</div>
+        </div>
 
-        <div>Language: {this.state.lang}</div>
+        <div className="iconSection">
+          <div className="title text-center">Language</div>
+          <div className="value text-center">{this.state.lang}</div>
+        </div>
 
       </div>
     )

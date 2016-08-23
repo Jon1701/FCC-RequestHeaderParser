@@ -21,10 +21,18 @@
 }
 
 .container-tabcontents {
-
   padding: 15px;
-
   border: solid 1px black;
+  display: flex;
+
+  .iconSection {
+    border: solid 1px black;
+
+    display: block;
+    flex: 1;
+
+    width: 33%;
+  }
 }
 
 .active {

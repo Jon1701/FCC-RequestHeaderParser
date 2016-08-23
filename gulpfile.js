@@ -8,6 +8,7 @@ var webpack = require('webpack-stream');
 // Paths.
 var srcPath = './source/';
 var destPath = './build/';
+var modulesPath = './node_modules/';
 
 // Move datasets.
 gulp.task('moveData', function() {
@@ -15,6 +16,12 @@ gulp.task('moveData', function() {
       .pipe(gulp.dest(destPath + 'data/'));
 }
 );
+
+// Move Fonts.
+gulp.task('moveFonts', function() {
+  gulp.src(modulesPath + 'font-awesome/fonts/*')
+      .pipe(gulp.dest(destPath + 'media/fonts/font-awesome/'));
+});
 
 // Move HTML files.
 gulp.task('moveHtml', function() {
@@ -67,4 +74,4 @@ gulp.task('server', function() {
   });
 });
 
-gulp.task('default', ['server', 'watch', 'moveData', 'moveHtml', 'moveStyles', 'processJsx']);
+gulp.task('default', ['server', 'watch', 'moveData', 'moveFonts', 'moveHtml', 'moveStyles', 'processJsx']);
