@@ -1,11 +1,34 @@
 import React from 'react';
 import classNames from 'classnames';
+import $ from 'jquery';
 
 export default class ContentsREST extends React.Component {
 
   // Component constructor.
   constructor() {
     super();
+
+    // Default state.
+    // Server hostname.
+    this.state = {
+      hostname: null
+    }
+  }
+
+  // Executes code before component mounts.
+  componentWillMount() {
+
+    // Get component reference.
+    var thisComp = this;
+
+    // Get the hostname of the server.
+    var jqxhr = $.getJSON('/hostname');
+    jqxhr.done(function(data) {
+      thisComp.setState({
+        hostname: data.hostname
+      })
+    });
+
   }
 
   // Component render.
@@ -19,7 +42,15 @@ export default class ContentsREST extends React.Component {
 
     return (
       <div className={myClasses}>
-        {String(this.props.data)}
+
+        <div>
+          Access the server at <a href={'/identify'}>{this.state.hostname + '/identify'}</a>
+        </div>
+
+        <div>
+          {String(this.props.data)}
+        </div>
+
       </div>
     )
   }

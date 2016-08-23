@@ -1,7 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
 
-
 export default class ContentsWebUsage extends React.Component {
 
   // Component constructor.

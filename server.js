@@ -5,6 +5,13 @@ var app = express();
 // Serve files from the ./build folder.
 app.use(express.static('build'));
 
+// Get the hostname of the server.
+app.get('/hostname', function(req, res) {
+  return res.json({
+    'hostname': req.hostname
+  })
+});
+
 app.get('/identify', function(req, res) {
 
   // Extracts operating system information from the browser headers.
@@ -66,7 +73,7 @@ app.get('/identify', function(req, res) {
 
 // Root folder. Serve index.html.
 app.get('/', function(req, res) {
-  res.sendfile(__dirname + '/build/index.html');
+  res.render(__dirname + '/build/index.html');
 });
 
 // Listen on Port 8080.
