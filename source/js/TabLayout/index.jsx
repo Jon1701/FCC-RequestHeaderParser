@@ -83,8 +83,11 @@ class TabLayout extends React.Component {
             />
         </div>
 
+        <div className="clearfix"/>
+
         <ContentsWebUsage visible={this.state.currentTab == 1} data={this.state}/>
         <ContentsREST visible={this.state.currentTab == 2} data={this.state.json}/>
+
       </div>
     )
   }

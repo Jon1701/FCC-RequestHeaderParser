@@ -21,7 +21,6 @@ export default class ContentsWebUsage extends React.Component {
       <div className={myClasses}>
 
         <div className="iconSection">
-          <div className="icon fa fa-globe"></div>
           <div className="title text-center">IP Address</div>
           <div className="value text-center">{this.props.data.ip}</div>
         </div>

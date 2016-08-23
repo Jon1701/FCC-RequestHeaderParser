@@ -25,17 +25,20 @@ body {
 
 .container-tabs {
   width: 100%;
-  display: flex;
 
   // Individual tab.
   .tab {
-    display: block;
-    flex: 1;
+    display: inline-block;
+    float: left;
     font-size: 150%;
 
-
-    padding: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     width: 50%;
+
+    background-color: $colour-bg;
+
+    cursor: pointer;
   }
 
   .active {
@@ -49,15 +52,13 @@ body {
 
   background-color: $colour-fg;
 
-  display: flex;
-  padding: 15px;
-
   font-size: 110%;
 
-  .iconSection {
-    display: block;
-    flex: 1;
+  padding-top: 25px;
+  padding-bottom: 25px;
 
+  .iconSection {
+    display: inline-block;
     width: 33%;
   }
 }
@@ -70,4 +71,8 @@ body {
 
 .hidden {
   display: none;
+}
+
+.clearfix {
+  clear: both;
 }

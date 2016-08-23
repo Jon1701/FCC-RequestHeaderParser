@@ -37,6 +37,7 @@ export default class ContentsREST extends React.Component {
     // Component render classes.
     var myClasses = classNames({
       'container-tabcontents': true,
+      'text-center': true,
       'hidden': !this.props.visible // Hide the class if it is not supposed to be visible.
     });
 
@@ -46,6 +47,8 @@ export default class ContentsREST extends React.Component {
         <div>
           Access the server at <a href={'/identify'}>{this.state.hostname + '/identify'}</a>
         </div>
+
+        <div><br/><br/></div>
 
         <div>
           {String(this.props.data)}
