@@ -5,13 +5,15 @@ var app = express();
 // Serve files from the ./build folder.
 app.use(express.static('build'));
 
-// Get the hostname of the server.
+// API endpoint to get the hostname of the server.
 app.get('/hostname', function(req, res) {
   return res.json({
     'hostname': req.hostname
   })
 });
 
+// API endpoint to get the IP Addressm Operating System, and Language from the
+// browser header.
 app.get('/identify', function(req, res) {
 
   // Extracts operating system information from the browser headers.
@@ -60,7 +62,10 @@ app.get('/identify', function(req, res) {
   var headers = req.headers;
 
   // Store ip address.
-  results['ipaddress'] = req.ip;
+  results['ipaddress'] = req.headers['x-forwarded-for'] ||
+                          req.connection.remoteAddress ||
+                          req.socket.remoteAddress ||
+                          req.connection.socket.remoteAddress;
 
   // Store language.
   results['language'] = extractLanguage(headers['accept-language']);
@@ -68,6 +73,7 @@ app.get('/identify', function(req, res) {
   // Store operating system.
   results['software'] = extractOperatingSystem(headers['user-agent']);
 
+  // Return results as JSON.
   res.json(results);
 });
 
@@ -77,6 +83,7 @@ app.get('/', function(req, res) {
 });
 
 // Listen on Port 8080.
+// ** When deploying app, remove '127.0.0.0.1' parameter ***.
 app.listen(8080, '127.0.0.1', function() {
   console.log('Listening for incoming traffic on PORT 8080.');
 });

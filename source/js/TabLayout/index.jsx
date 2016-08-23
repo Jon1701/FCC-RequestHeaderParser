@@ -64,7 +64,6 @@ class TabLayout extends React.Component {
     return (
       <div>
 
-
         <Description/>
 
         <div className="container-tabs">
