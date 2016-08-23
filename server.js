@@ -10,23 +10,35 @@ app.get('/identify', function(req, res) {
   // Extracts operating system information from the browser headers.
   var extractOperatingSystem = function(userAgent) {
 
-    // Rule to find text between parentheses.
-    var regex = /\(([^)]+)\)/;
-    var match = regex.exec(userAgent);
+    try {
 
-    // Return the text in the first parenthesis.
-    return match[1];
+      // Rule to find text between parentheses.
+      var regex = /\(([^)]+)\)/;
+      var match = regex.exec(userAgent);
+
+      // Return the text in the first parenthesis.
+      return match[1];
+
+    } catch(e) {
+      return null;
+    }
 
   }
 
   // Extracts language from the browser headers.
   var extractLanguage = function(data) {
 
-    // Split the given header by commas.
-    var tokens = data.split(',');
+    try {
 
-    // First token is the language.
-    return tokens[0];
+      // Split the given header by commas.
+      var tokens = data.split(',');
+
+      // First token is the language.
+      return tokens[0];
+
+    } catch(e) {
+      return null;
+    }
 
   }
 

@@ -1,7 +1,23 @@
+$colour-bg: #21252b;
+$colour-fg: #282c34;
+
+
+body {
+  background-color: $colour-bg;
+  color: #FFFFFF;
+  font-size: 100%;
+  font-family: monospace;;
+}
+
 .container {
   width: 100%;
   margin: 0 auto;
-  border: solid 1px black;
+}
+
+.description {
+  background-color: $colour-fg;
+  padding: 25px;
+  margin-bottom: 25px;
 }
 
 .container-tabs {
@@ -10,24 +26,32 @@
 
   // Individual tab.
   .tab {
-    border: solid 1px black;
     display: block;
     flex: 1;
+    font-size: 150%;
+
 
     padding: 25px;
     width: 50%;
   }
 
+  .active {
+    background-color: $colour-fg;
+    color: white;
+  }
+
 }
 
 .container-tabcontents {
-  padding: 15px;
-  border: solid 1px black;
+
+  background-color: $colour-fg;
+
   display: flex;
+  padding: 15px;
+
+  font-size: 110%;
 
   .iconSection {
-    border: solid 1px black;
-
     display: block;
     flex: 1;
 
@@ -35,10 +59,7 @@
   }
 }
 
-.active {
-  background-color: #333333;
-  color: white;
-}
+
 
 .text-center {
   text-align: center;

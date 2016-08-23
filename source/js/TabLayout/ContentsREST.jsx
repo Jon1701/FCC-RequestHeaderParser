@@ -19,7 +19,7 @@ export default class ContentsREST extends React.Component {
 
     return (
       <div className={myClasses}>
-        This has the contents of the REST API tab.
+        {String(this.props.data)}
       </div>
     )
   }
