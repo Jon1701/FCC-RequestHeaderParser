@@ -83,7 +83,6 @@ app.get('/', function(req, res) {
 });
 
 // Listen on Port 8080.
-// ** When deploying app, remove '127.0.0.0.1' parameter ***.
-app.listen(8080, '127.0.0.1', function() {
+app.listen(8080, function() {
   console.log('Listening for incoming traffic on PORT 8080.');
 });
