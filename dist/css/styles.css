@@ -1,0 +1,50 @@
+a {
+  color: #FFFFFF; }
+
+body {
+  background-color: #21252b;
+  color: #FFFFFF;
+  font-size: 100%;
+  font-family: monospace; }
+
+.container {
+  width: 100%;
+  margin: 0 auto; }
+
+.description {
+  background-color: #282c34;
+  padding: 25px;
+  margin-bottom: 25px; }
+
+.container-tabs {
+  width: 100%; }
+  .container-tabs .tab {
+    display: inline-block;
+    float: left;
+    font-size: 150%;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 50%;
+    background-color: #21252b;
+    cursor: pointer; }
+  .container-tabs .active {
+    background-color: #282c34;
+    color: white; }
+
+.container-tabcontents {
+  background-color: #282c34;
+  font-size: 110%;
+  padding-top: 25px;
+  padding-bottom: 25px; }
+  .container-tabcontents .iconSection {
+    display: inline-block;
+    width: 33%; }
+
+.text-center {
+  text-align: center; }
+
+.hidden {
+  display: none; }
+
+.clearfix {
+  clear: both; }

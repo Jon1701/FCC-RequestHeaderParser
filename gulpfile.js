@@ -6,8 +6,8 @@ var nodemon = require('gulp-nodemon');
 var webpack = require('webpack-stream');
 
 // Paths.
-var srcPath = './source/';
-var destPath = './build/';
+var srcPath = './src/';
+var destPath = './dist/';
 var modulesPath = './node_modules/';
 
 // Move datasets.

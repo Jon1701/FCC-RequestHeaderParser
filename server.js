@@ -2,8 +2,8 @@
 var express = require('express');
 var app = express();
 
-// Serve files from the ./build folder.
-app.use(express.static('build'));
+// Serve files from the ./dist folder.
+app.use(express.static('dist'));
 
 // API endpoint to get the hostname of the server.
 app.get('/hostname', function(req, res) {
@@ -82,7 +82,8 @@ app.get('/', function(req, res) {
   res.render(__dirname + '/build/index.html');
 });
 
-// Listen on Port 8080.
-app.listen(8080, function() {
-  console.log('Listening for incoming traffic on PORT 8080.');
+// Let the port be set by Heroku.
+var port = process.env.PORT || 8080
+app.listen(port, function() {
+  console.log('Listening for connections on PORT 8080');
 });
